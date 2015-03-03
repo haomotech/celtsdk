@@ -135,6 +135,8 @@
 #GETUI proguard end
 
 #MM proguard start
+-libraryjars libs/mmbilling.3.0.1.jar
+
 -dontnote mm.sms.purchasesdk.**
 
 -keep class safiap.framework.** {*; }
@@ -154,6 +156,14 @@
 #SKY proguard end
 
 #Vendor proguard end
+
+
+
+
+
+
+
+
 
 
 
