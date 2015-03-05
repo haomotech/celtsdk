@@ -23,6 +23,25 @@
 	<uses-permission android:name="android.permission.SEND_SMS" />
 	<uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS" />
 	<uses-permission android:name="android.permission.CHANGE_NETWORK_STATE" />
+	
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.SEND_SMS" />
+    <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS" />
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.CHANGE_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.RECEIVE_SMS" />
+    <uses-permission android:name="android.permission.READ_SMS" />
+    <uses-permission android:name="android.permission.WRITE_SMS" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.DISABLE_KEYGUARD"/>  
+    	
 	<!--uses-permission-end-->
 	
 	<!--custom-permission-start-->
@@ -146,24 +165,23 @@
 			
 	
 		
-		<!-- mm301 configuration start-->
-
+        <!-- MM强联网配置开始 -->
         <service
             android:name="mm.purchasesdk.iapservice.PurchaseService"
             android:exported="true" >
 
             <!-- android:process="mm.iapServices" > -->
-            <intent-filter android:priority="301" >
+            <intent-filter android:priority="310" >
                 <action android:name="com.aspire.purchaseservice.BIND" />
 
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
-            <intent-filter android:priority="301" >
+            <intent-filter android:priority="310" >
                 <action android:name="cn.stgame.p1.op.purchaseservice.BIND" />
 
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>            
-            <intent-filter android:priority="301" >
+            <intent-filter android:priority="310" >
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.SAFIAP.COMPONENT" >
@@ -176,7 +194,7 @@
             android:name="mm.purchasesdk.iapservice.BillingLayoutActivity"
             android:configChanges="orientation|keyboardHidden"
             android:theme="@android:style/Theme.Translucent" >
-            <intent-filter android:priority="301" >
+            <intent-filter android:priority="310" >
                 <action android:name="cn.stgame.p1.op.com.mmiap.activity" />
 
                 <category android:name="android.intent.category.DEFAULT" />
@@ -240,9 +258,8 @@
         <service
             android:name="safiap.framework.logreport.monitor.handler.LogreportHandler"
             android:process=":remote" />
-        <!-- android:process="safiap.framework.safframeworkmanager" end -->	
-        	
-		<!-- mm301 configuration end -->
+        <!-- android:process="safiap.framework.safframeworkmanager" end -->        
+        <!-- MM强联网配置结束 -->
 		
 		
 	
