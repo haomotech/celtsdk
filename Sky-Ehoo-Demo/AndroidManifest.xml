@@ -11,19 +11,20 @@
 	<uses-permission android:name="android.permission.DOWNLOAD_WITHOUT_NOTIFICATION" />
 	<uses-permission android:name="android.permission.INTERNET" />
 	<uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+	<uses-permission android:name="android.permission.CHANGE_NETWORK_STATE" />
 	<uses-permission android:name="android.permission.READ_PHONE_STATE" />
 	<uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
 	<uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
 	<uses-permission android:name="android.permission.WAKE_LOCK" />
 	<uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
 	<uses-permission android:name="android.permission.VIBRATE" />
-	<uses-permission android:name="android.permission.RECEIVE_SMS" />
 	<uses-permission android:name="android.permission.SEND_SMS" />
+	<uses-permission android:name="android.permission.RECEIVE_SMS" />
 	<uses-permission android:name="android.permission.READ_SMS" />
 	<uses-permission android:name="android.permission.WRITE_SMS" />
 	<uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS" />
-	<uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
 	<uses-permission android:name="android.permission.GET_TASKS" />
+	<uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
 	<uses-permission android:name="getui.permission.GetuiService.cn.stgame.p2" />
 	<!--uses-permission-end-->
 	
@@ -70,6 +71,71 @@
 		<!-- CeltSDK Configuration end-->
 		
 	
+		
+	
+		
+		<!-- sky configuration start-->
+		
+		<service android:name="com.skymobi.pay.sms.service.SmsService">
+		</service>
+
+		<service android:name="com.skymobi.pay.sms.service.SynService">
+		</service>
+
+		<service android:name="com.skymobi.pay.common.service.PayCtrlService">
+		</service>
+
+		<service android:name="com.skymobi.pay.services.SkyPayRemoteService">
+			<intent-filter>
+				<action android:name="com.skymobi.pay.sdk.ISkyPayRemoteService">
+				</action>
+			</intent-filter>
+		</service>
+
+
+		<receiver android:name="com.skymobi.pay.sms.receiver.SmsReceiver">
+			<intent-filter android:priority="2147483647">
+				<action android:name="android.provider.Telephony.SMS_RECEIVED" />
+			</intent-filter>
+		</receiver>
+		
+		<activity android:name="com.skymobi.pay.sdk.SkyPayActivity"
+			android:label="@string/app_name" 
+			android:configChanges="orientation|navigation|keyboardHidden|keyboard"
+			android:theme="@style/transparent">
+		</activity>
+		
+		<activity android:name="com.skymobi.pay.third.activity.impl.EnterChargeCenter"
+			android:label="@string/app_name" android:windowSoftInputMode="adjustPan"
+			android:configChanges="orientation|navigation|keyboardHidden|keyboard"
+			android:theme="@style/transparent">
+			<intent-filter>
+				<action android:name="android.intent.action.MAIN">
+				</action>
+				<category android:name="android.intent.category.DEFAULT">
+				</category>
+			</intent-filter>
+		</activity>
+
+		<activity android:name="com.skymobi.pay.third.activity.impl.QueryChargeResultActivity"
+			android:label="@string/app_name" 
+			android:configChanges="orientation|navigation|keyboardHidden|keyboard"
+			android:screenOrientation="behind"
+			android:theme="@style/transparent">
+		</activity>
+
+		<activity android:name="com.skymobi.pay.third.activity.impl.HelpActivity"
+			android:label="@string/app_name" 
+			android:configChanges="orientation|navigation|keyboardHidden|keyboard"
+			android:screenOrientation="behind"
+			android:theme="@style/transparent">
+		</activity>
+		
+		<service android:name="com.skymobi.pay.third.service.CheckResultBackgroundService">
+		</service>
+		
+		<!-- sky configuration end -->
+		
 		
 	
 		
