@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="xc_title_alert">提示信息</string>
+    <string name="xc_ok">确定</string>
+    <string name="xc_cancel">取消</string>
+</resources>

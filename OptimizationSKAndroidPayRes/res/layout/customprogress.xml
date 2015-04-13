@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+  xmlns:android="http://schemas.android.com/apk/res/android"
+  android:layout_width="wrap_content"
+  android:layout_height="wrap_content"
+  android:orientation="vertical"
+  android:gravity="center"> 
+
+  <ProgressBar
+      android:id="@+id/oahprogressbar"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:indeterminateDrawable="@drawable/my_progress"
+      android:maxHeight="96dip"
+      android:maxWidth="96dip"
+      android:minHeight="48dip"
+      android:minWidth="48dip" />
+
+  <TextView
+  android:layout_width="wrap_content"
+  android:layout_height="fill_parent" android:text="资源加载中，请稍候..."
+  android:id="@+id/oaprogresstitle"
+  android:gravity="center_vertical"
+  />
+</LinearLayout>
